@@ -1,0 +1,82 @@
+<html>
+	<head>
+		<title>Calculator</title>
+		  <meta name="viewport" content="width=device-width, initial-scale=1">
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	</head>
+
+	<script>
+		function myclick(a){
+			myform.display.value += a;
+		}
+
+		function ac(){
+			myform.display.value = 0;
+			del();
+		}
+
+		function del(){
+			let preval = myform.display.value;
+			myform.display.value = preval.substr(0, preval.length-1);
+		}
+
+		function trig(x){
+			if(x == "sin"){
+				myform.display.value = Math.sin(myform.display.value);
+			}
+			else if(x == "cos"){
+				myform.display.value = Math.cos(myform.display.value);
+			}
+			else if(x == "tan"){
+				myform.display.value = Math.tan(myform.display.value);
+			}
+			else if(x == "pow"){
+				myform.display.value = Math.pow(myform.display.value,2);		
+			}
+			else if(x == "sqrt"){
+				let q = myform.display.value
+				myform.display.value = Math.sqrt(q);				
+			}
+			else if(x == "evalTo"){
+				myform.display.value = eval(myform.display.value);
+			}																	
+		}			
+	</script>
+
+	<body>
+		<div class="container-fluid">
+			<div>
+				<form name="myform">
+					<input type="text" name="display"><br>
+					<button type="button" name="btnsin" value="sin" class="btn btn-primary" onclick="trig('sin')">Sin</button>
+					<!-- <input type="button" name="btnsin" value="sin" onclick="trig('sin')"> -->
+					<input type="button" name="btncos" value="cos" onclick="trig('cos')">
+					<input type="button" name="btntan" value="tan" onclick="trig('tan')">
+					<input type="button" name="btnsqr" value="pow" onclick="trig('pow')">
+					<input type="button" name="btnsqrt" value="sqrt" onclick="trig('sqrt')"> <br>
+					<input type="button" name="btn9" value="9" onclick="myclick('9')">
+					<input type="button" name="btn8" value="8" onclick="myclick('8')">
+					<input type="button" name="btn7" value="7" onclick="myclick('7')">
+					<input type="button" name="btndel" value="DEL" onclick="del()">
+					<input type="button" name="btnac" value="AC" onclick="ac()"><br>
+					<input type="button" name="btn6" value="6" onclick="myclick('6')">
+					<input type="button" name="btn5" value="5" onclick="myclick('5')">
+					<input type="button" name="btn4" value="4" onclick="myclick('4')">
+					<input type="button" name="btnadd" value="+" onclick="myclick('+')">
+					<input type="button" name="btnsub" value="-" onclick="myclick('-')"><br>
+					<input type="button" name="btn3" value="3" onclick="myclick('3')">
+					<input type="button" name="btn2" value="2" onclick="myclick('2')">
+					<input type="button" name="btn1" value="1" onclick="myclick('1')">
+					<input type="button" name="btnmul" value="*" onclick="myclick('*')">
+					<input type="button" name="btndiv" value="/" onclick="myclick('/')"><br>
+					<input type="button" name="btnzero" value="0" onclick="myclick('0')">
+					<input type="button" name="btn2zero" value="00" onclick="myclick('00')">
+					<input type="button" name="btnpoint" value="." onclick="myclick('.')">
+					<input type="button" name="btnequal" value="=" onclick="trig('evalTo')"><br>			
+				</form>
+			</div>	
+		</div>	
+	</body>
+</html>
