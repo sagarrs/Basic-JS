@@ -7,77 +7,41 @@
 		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	</head>
 
-	<script>
-		function myclick(a){
-			myform.display.value += a;
-		}
-
-		function ac(){
-			myform.display.value = 0;
-			del();
-		}
-
-		function del(){
-			let preval = myform.display.value;
-			myform.display.value = preval.substr(0, preval.length-1);
-		}
-
-		function trig(x){
-			if(x == "sin"){
-				myform.display.value = Math.sin(myform.display.value);
-			}
-			else if(x == "cos"){
-				myform.display.value = Math.cos(myform.display.value);
-			}
-			else if(x == "tan"){
-				myform.display.value = Math.tan(myform.display.value);
-			}
-			else if(x == "pow"){
-				myform.display.value = Math.pow(myform.display.value,2);		
-			}
-			else if(x == "sqrt"){
-				let q = myform.display.value
-				myform.display.value = Math.sqrt(q);				
-			}
-			else if(x == "evalTo"){
-				myform.display.value = eval(myform.display.value);
-			}																	
-		}			
-	</script>
+	<script src="calculator.js"></script>
 
 	<body>
 		<div class="container-fluid">
 			<div>
 				<form name="myform">
 					<input type="text" name="display"><br>
-					<button type="button" name="btnsin" value="sin" class="btn btn-primary" onclick="trig('sin')">Sin</button>
-					<button type="button" name="btncos" value="cos" class="btn btn-primary" onclick="trig('cos')">Cos</button>
-					<button type="button" name="btntan" value="tan" class="btn btn-primary" onclick="trig('tan')">Tan</button>
-					<button type="button" name="btnpow" value="pow" class="btn btn-primary" onclick="trig('pow')">Pow</button>
-					<button type="button" name="btnsqrt" value="sqrt" class="btn btn-primary" onclick="trig('sqrt')">Sqrt</button><br>
+					<button type="button" name="btnsin" value="sin" class="btn btn-outline-primary" onclick="trig('sin')">Sin</button>
+					<button type="button" name="btncos" value="cos" class="btn btn-outline-primary" onclick="trig('cos')">Cos</button>
+					<button type="button" name="btntan" value="tan" class="btn btn-outline-primary" onclick="trig('tan')">Tan</button>
+					<button type="button" name="btnpow" value="pow" class="btn btn-outline-primary" onclick="trig('pow')">Pow</button>
+					<button type="button" name="btnsqrt" value="sqrt" class="btn btn-outline-primary" onclick="trig('sqrt')">Sqrt</button><br>
 
-					<button type="button" name="btn9" value="9" class="btn btn-primary" onclick="myclick('9')">9</button>
-					<button type="button" name="btn8" value="8" class="btn btn-primary" onclick="myclick('8')">8</button>
-					<button type="button" name="btn7" value="7" class="btn btn-primary" onclick="myclick('7')">7</button>
-					<button type="button" name="btndel" value="DEL" class="btn btn-primary" onclick="del()">Del</button>
-					<button type="button" name="btnac" value="AC" class="btn btn-primary" onclick="ac()">AC</button> <br>
+					<button type="button" name="btn9" value="9" class="btn btn-outline-primary" onclick="myclick('9')">9</button>
+					<button type="button" name="btn8" value="8" class="btn btn-outline-primary" onclick="myclick('8')">8</button>
+					<button type="button" name="btn7" value="7" class="btn btn-outline-primary" onclick="myclick('7')">7</button>
+					<button type="button" name="btndel" value="DEL" class="btn btn-outline-primary" onclick="del()">Del</button>
+					<button type="button" name="btnac" value="AC" class="btn btn-outline-primary" onclick="ac()">AC</button> <br>
 
-					<button type="button" name="btn6" value="6" class="btn btn-primary" onclick="myclick('6')">6</button>
-					<button type="button" name="btn5" value="5" class="btn btn-primary" onclick="myclick('5')">5</button>
-					<button type="button" name="btn4" value="4" class="btn btn-primary" onclick="myclick('4')">4</button>
-					<button type="button" name="btnadd" value="+" class="btn btn-primary" onclick="myclick('+')">+</button>
-					<button type="button" name="btnsub" value="-" class="btn btn-primary" onclick="myclick('-')">-</button> <br>
+					<button type="button" name="btn6" value="6" class="btn btn-outline-primary" onclick="myclick('6')">6</button>
+					<button type="button" name="btn5" value="5" class="btn btn-outline-primary" onclick="myclick('5')">5</button>
+					<button type="button" name="btn4" value="4" class="btn btn-outline-primary" onclick="myclick('4')">4</button>
+					<button type="button" name="btnadd" value="+" class="btn btn-outline-primary" onclick="myclick('+')">+</button>
+					<button type="button" name="btnsub" value="-" class="btn btn-outline-primary" onclick="myclick('-')">-</button> <br>
 
-					<button type="button" name="btn3" value="3" class="btn btn-primary" onclick="myclick('3')">3</button>
-					<button type="button" name="btn2" value="2" class="btn btn-primary" onclick="myclick('2')">2</button>
-					<button type="button" name="btn1" value="1" class="btn btn-primary" onclick="myclick('1')">1</button>
-					<button type="button" name="btnmul" value="*" class="btn btn-primary" onclick="myclick('*')">*</button>
-					<button type="button" name="btndiv" value="/" class="btn btn-primary" onclick="myclick('/')">/</button><br>
+					<button type="button" name="btn3" value="3" class="btn btn-outline-primary" onclick="myclick('3')">3</button>
+					<button type="button" name="btn2" value="2" class="btn btn-outline-primary" onclick="myclick('2')">2</button>
+					<button type="button" name="btn1" value="1" class="btn btn-outline-primary" onclick="myclick('1')">1</button>
+					<button type="button" name="btnmul" value="*" class="btn btn-outline-primary" onclick="myclick('*')">*</button>
+					<button type="button" name="btndiv" value="/" class="btn btn-outline-primary" onclick="myclick('/')">/</button><br>
 
-					<button type="button" name="btn0" value="0" class="btn btn-primary" onclick="myclick('0')">0</button>
-					<button type="button" name="btn00" value="00" class="btn btn-primary" onclick="myclick('00')">00</button>
-					<button type="button" name="btnpoint" value="." class="btn btn-primary" onclick="myclick('0')">.</button>
-					<button type="button" name="btnequal" value="=" class="btn btn-primary" onclick="trig('evalTo')">=</button><br>				
+					<button type="button" name="btn0" value="0" class="btn btn-outline-primary" onclick="myclick('0')">0</button>
+					<button type="button" name="btn00" value="00" class="btn btn-outline-primary" onclick="myclick('00')">00</button>
+					<button type="button" name="btnpoint" value="." class="btn btn-outline-primary" onclick="myclick('0')">.</button>
+					<button type="button" name="btnequal" value="=" class="btn btn-outline-primary" onclick="trig('evalTo')">=</button><br>				
 				</form>
 			</div>	
 		</div>	
