@@ -6,16 +6,23 @@
 }
 
 #txt{
-    width: 27%;
+    width: 37%;
 }
 
 #buttons{
     margin-top: 10px;
 }
 
+.head{
+    color:#6D6D6D;
+}
+
 .container{
-    margin-top: 5%;
-    margin-left: 100px;
+    background-image: url(black-background_00313351.jpg);
+    padding-top: 6%;
+    width: auto;
+    height: 672px;
+    padding-left: 35%;
 }
 
 .clr{
